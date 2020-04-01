@@ -10,7 +10,7 @@ public class Match {
 	private String finalistLastname;
 	
 	private int idTournament;
-	private String year;
+	private int year;
 
 	public Match() {
 	}
@@ -63,11 +63,11 @@ public class Match {
 		this.idTournament = idTournament;
 	}
 
-	public String getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 	

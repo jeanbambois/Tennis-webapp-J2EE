@@ -8,13 +8,13 @@
 <body>
 	<nav class="row navbar navbar-expand-sm bg-dark navbar-dark ">
 		<div class="container-fluid">
-		<h2>Tennis BeVer</h2>
+		<h2 class="navbar-brand">Tennis BeVer</h2>
 			<ul class="nav navbar-nav">
 				<li class="nav-item">
-					<a href="/AppTennisJ2ee/listMatch" class="nav-link">Matchs</a>
+					<a href="/AppTennisJ2ee/listPlayer" class="nav-link">Joueurs</a>
 				</li>
 				<li class="nav-item">
-					<a href="" class="nav-link">Connexion</a>
+					<a href="/AppTennisJ2ee/listMatch" class="nav-link">Matchs</a>
 				</li>
 			</ul>
 		</div>

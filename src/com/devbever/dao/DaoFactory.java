@@ -37,4 +37,8 @@ public class DaoFactory {
 		return new MatchDaoImp(this);
 	}
 	
+	public PlayerDao getPlayerDao() {
+		return new PlayerDaoImp(this);
+	}
+	
 }

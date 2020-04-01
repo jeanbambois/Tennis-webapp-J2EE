@@ -10,8 +10,10 @@
 <body>
 	<%@ include file="menuBar.jsp" %>
 	
-	<div class="row m-3">
-		<div class="col-8 border border-dark rounded">
+	<div class="row m-3 justify-content-center">
+		<div class="col-8 border border-secondary rounded">
+			<h3 class="text-center">Liste des matchs</h3>
+			<a href="/AppTennisJ2ee/addMatch" class="nav-link"><button class="btn btn-primary">Ajouter un match</button></a>
 			<table class="table">
 			  <thead>
 			    <tr>

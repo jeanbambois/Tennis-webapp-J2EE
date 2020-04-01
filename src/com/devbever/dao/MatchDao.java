@@ -5,5 +5,5 @@ import com.devbever.beans.Match;
 
 public interface MatchDao {
 	List<Match> getList();
-	
+	void addMatch(Match match);
 }

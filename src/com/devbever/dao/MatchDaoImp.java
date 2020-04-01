@@ -1,6 +1,7 @@
 package com.devbever.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -48,7 +49,7 @@ public class MatchDaoImp implements MatchDao{
 				String finalistFirstname = rs.getString("joueurFinalPrenom");
 				String finalistLastname = rs.getString("joueurFinalNom");
 				int idTournament = rs.getInt("tournoiId");
-				String year = rs.getString("anneeEpreuve");
+				int year = rs.getInt("anneeEpreuve");
 				
 				Match match = new Match();
 				match.setIdMatch(idMatch);
@@ -62,7 +63,7 @@ public class MatchDaoImp implements MatchDao{
 				matchs.add(match);
 				
 			}
-			System.out.println("_______ END REQ ________");
+			System.out.println("___ GETLIST REQ ___");
 		}  catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -78,6 +79,29 @@ public class MatchDaoImp implements MatchDao{
 			}
 		}
 		return matchs;
+	}
+
+	@Override
+	public void addMatch(Match match) {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+		try {
+			connexion = daoFactory.getConnection();
+			
+			String req = "";
+			preparedStatement = connexion.prepareStatement(req);
+			preparedStatement.setString(1, match.getFinalistFirstname());
+			preparedStatement.setString(2, match.getFinalistFirstname());
+			preparedStatement.setString(3, match.getWinnerFirstname());
+			preparedStatement.setString(4, match.getWinnerLastname());
+			preparedStatement.setInt(5, match.getIdTournament());
+			preparedStatement.setInt(6, match.getYear());
+
+
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
